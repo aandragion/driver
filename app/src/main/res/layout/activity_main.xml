@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/back"
     tools:context=".MainActivity">
 
 
@@ -17,51 +18,71 @@
         android:text="Login"
         android:textSize="40dp"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="66dp"
-        android:text="Username" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/textView"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginTop="66dp"-->
+<!--        android:text="Username" />-->
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/e_username"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="29dp"
-        android:text="Password" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/e_username"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginTop="29dp"-->
+<!--        android:text="Password" />-->
 
-    <EditText
-        android:id="@+id/e_username"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="-13dp"
-        android:layout_marginEnd="25dp"
-        android:layout_toEndOf="@+id/textView2"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:layout_centerVertical="true">
+
+
+        <EditText
+            android:id="@+id/e_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shapeemail"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/e_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="-13dp"
-        android:layout_marginEnd="25dp"
-        android:layout_toEndOf="@+id/textView3"
+        android:layout_below="@+id/e_username"
+        android:layout_alignStart="@+id/e_username"
+        android:layout_alignEnd="@+id/e_username"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shapeemail"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
+        android:drawablePadding="10dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Username"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/b_login"
@@ -69,8 +90,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/e_pass"
         android:layout_alignStart="@+id/e_pass"
+        android:layout_alignEnd="@+id/e_pass"
         android:layout_marginTop="30dp"
+        android:background="@drawable/shapelogin"
         android:text="Login" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
