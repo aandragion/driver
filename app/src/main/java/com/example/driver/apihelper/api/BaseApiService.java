@@ -2,20 +2,16 @@ package com.example.driver.apihelper.api;
 
 
 
-import com.example.driver.list_bank;
+import com.example.driver.list_jadwal;
 
 import java.util.List;
 
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Multipart;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 
@@ -25,6 +21,15 @@ public interface BaseApiService {
     @POST("login.php")
     Call<ResponseBody> loginRequest(@Field("username") String username,
                                     @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("jemput.php")
+    Call<ResponseBody> jemputRequest(@Field("status") String status,
+                                     @Field("id_jadwal") String mid);
+    @FormUrlEncoded
+    @POST("jemput.php")
+    Call<ResponseBody> selesaiRequest(@Field("status") String status,
+                                     @Field("id_jadwal") String mid);
 
 //    // Fungsi ini untuk memanggil API http://192.168.8.109/admin-api/register.php
 //    @FormUrlEncoded
@@ -154,8 +159,8 @@ public interface BaseApiService {
 //            @Query("item_type") String item_type
 //    );
 //
-    @GET("data_bank.php")
-    Call<List<list_bank>> getBank(
+    @GET("data_jwl.php")
+    Call<List<list_jadwal>> getjadwal(
             @Query("item_type") String item_type
     );
 //

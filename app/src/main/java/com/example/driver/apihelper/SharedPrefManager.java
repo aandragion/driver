@@ -6,15 +6,15 @@ import android.content.SharedPreferences;
 public class SharedPrefManager {
 
     public static final String SP_MAHASISWA_APP = "spMahasiswaApp";
-    public static  final  String SP_ID = "id_user";
-    public static  final  String SP_ic = "saldo_icash";
-    public static final String SP_NAMA = "username";
-    public static final String SP_EMAIL = "email";
+    public static final String SP_ID = "id_user";
+    public static final String SP_ic = "saldo_icash";
+    public static final String SP_NAMA = "nama_lengkap";
     public static final String SP_ALAMAT = "alamat";
-    public static final String SP_NO_TLP = "no_tlp";
+    public static final String SP_NO_TLP= "no_telepon";
+    public static final String SP_USERNAME= "username";
     public static final String SP_PASS = "password";
-    public static final String SP_PHOTO = "photo";
-    public static final String SP_NOMINAL = "nominal";
+    // public static final String SP_PHOTO = "photo";
+    // public static final String SP_NOMINAL = "nominal";
 
 
 
@@ -44,8 +44,8 @@ public class SharedPrefManager {
         spEditor.putString(keySP, value);
         spEditor.putString(keySP, value);
         spEditor.putString(keySP, value);
-        spEditor.putString(keySP, value);
-        spEditor.putString(keySP, value);
+        // spEditor.putString(keySP, value);
+        // spEditor.putString(keySP, value);
         spEditor.commit();
     }
     public void saveSPBoolean(String keySP, boolean value){
@@ -69,8 +69,8 @@ public class SharedPrefManager {
         return sp.getString(SP_ic,"");
     }
 
-    public String getSpEmail(String nama, String spNama) {
-        return sp.getString(SP_EMAIL,"");
+    public String getSpUsername(String nama, String spNama) {
+        return sp.getString(SP_USERNAME,"");
     }
 
     public String getSpAlamat(String nama, String spNama) {
@@ -84,11 +84,11 @@ public class SharedPrefManager {
     public String getSpPass(String nama, String spNama) {
         return sp.getString(SP_PASS,"");
     }
-    public String getSpNominal(String nama, String spNama) {
-        return sp.getString(SP_NOMINAL,"");
-    }
-
-    public String getSpPhoto(String nama, String spNama) {
-        return sp.getString(SP_PHOTO,"");
-    }
+//    public String getSpNominal(String nama, String spNama) {
+//        return sp.getString(SP_NOMINAL,"");
+//    }
+//
+//    public String getSpPhoto(String nama, String spNama) {
+//        return sp.getString(SP_PHOTO,"");
+//    }
 }

@@ -28,8 +28,8 @@ public class beranda extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     ImageButton btnLogout;
     BaseApiService apiInterface;
-    List<list_bank> listbank;
-    ad_bank adapter;
+    List<list_jadwal> listbank;
+    ad_jadwal adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,25 +56,25 @@ public class beranda extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        fetchContact("bank");
+        fetchContact(""+ sharedPrefManager.getSPId(SharedPrefManager.SP_ID,""));
     }
 
     private void fetchContact(String type) {
         apiInterface = UtilsApi.getAPIService();
 
-        Call<List<list_bank>> call = apiInterface.getBank(type);
-        call.enqueue(new Callback<List<list_bank>>() {
+        Call<List<list_jadwal>> call = apiInterface.getjadwal(type);
+        call.enqueue(new Callback<List<list_jadwal>>() {
             @Override
-            public void onResponse(Call<List<list_bank>> call, Response<List<list_bank>> response) {
+            public void onResponse(Call<List<list_jadwal>> call, Response<List<list_jadwal>> response) {
 
                 listbank = response.body();
-                adapter = new ad_bank(listbank, beranda.this);
+                adapter = new ad_jadwal(listbank, beranda.this);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onFailure(Call<List<list_bank>> call, Throwable t) {
+            public void onFailure(Call<List<list_jadwal>> call, Throwable t) {
                 Toast.makeText(beranda.this, "Error\n" + t.toString(), Toast.LENGTH_LONG).show();
             }
         });
